@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jure.puppyapp2.MainActivity">
+    <item
+        android:id="@+id/action_five_puppies"
+        android:orderInCategory="100"
+        android:icon="@drawable/five_star"
+        android:title="@string/action_five_puppies"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_acerca"
+        android:orderInCategory="110"
+        android:title="@string/action_acerca"
+        app:showAsAction="never" />
+</menu>
