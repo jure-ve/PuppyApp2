@@ -1,4 +1,4 @@
-package com.jure.puppyapp2;
+package com.jure.puppyapp2.Classes;
 
 import java.io.Serializable;
 

@@ -1,9 +1,13 @@
-package com.jure.puppyapp2;
+package com.jure.puppyapp2.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import com.jure.puppyapp2.Adapters.FiveAdapter;
+import com.jure.puppyapp2.Classes.Puppy;
+import com.jure.puppyapp2.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

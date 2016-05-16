@@ -1,4 +1,4 @@
-package com.jure.puppyapp2;
+package com.jure.puppyapp2.Classes;
 
 /**
  * Created by jure on 15/05/16.

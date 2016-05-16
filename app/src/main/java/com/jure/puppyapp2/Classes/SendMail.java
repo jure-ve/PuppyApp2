@@ -1,9 +1,11 @@
-package com.jure.puppyapp2;
+package com.jure.puppyapp2.Classes;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
+
+import com.jure.puppyapp2.Classes.ConfigMail;
 
 import java.util.Properties;
 

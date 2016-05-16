@@ -1,11 +1,13 @@
-package com.jure.puppyapp2;
+package com.jure.puppyapp2.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import com.jure.puppyapp2.R;
+import com.jure.puppyapp2.Classes.SendMail;
 
 public class ContactoActivity extends AppCompatActivity {
 

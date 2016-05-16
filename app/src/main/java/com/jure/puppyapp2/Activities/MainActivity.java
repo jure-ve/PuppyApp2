@@ -1,4 +1,4 @@
-package com.jure.puppyapp2;
+package com.jure.puppyapp2.Activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,8 +12,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jure.puppyapp2.Classes.Puppy;
+import com.jure.puppyapp2.Adapters.PuppyAdapter;
+import com.jure.puppyapp2.R;
 
 import java.util.ArrayList;
 import java.util.List;
