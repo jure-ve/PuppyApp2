@@ -9,8 +9,13 @@
         android:title="@string/action_five_puppies"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_acerca"
+        android:id="@+id/action_contacto"
         android:orderInCategory="110"
+        android:title="@string/action_contacto"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_acerca"
+        android:orderInCategory="120"
         android:title="@string/action_acerca"
         app:showAsAction="never" />
 </menu>

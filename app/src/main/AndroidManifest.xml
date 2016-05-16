@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jure.puppyapp2">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/footprint_white"
@@ -18,14 +20,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FiveActivity"
-            android:parentActivityName="com.jure.puppyapp2.MainActivity"
-            android:label="@string/favoritos">
+        <activity
+            android:name=".FiveActivity"
+            android:label="@string/favoritos"
+            android:parentActivityName=".MainActivity">
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jure.puppyapp2.MainActivity" />
-
+        </activity>
+        <activity android:name=".ContactoActivity"
+            android:parentActivityName=".MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jure.puppyapp2.MainActivity" />
         </activity>
     </application>
 

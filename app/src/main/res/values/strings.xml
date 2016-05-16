@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">PuppyApp</string>
+    <string name="dialogo_credito1">Acerca de&#8230;</string>
+    <string name="dialogo_credito2">Desarrollado por Julio R. Reyes G. </string>
+    <string name="dialogo_credito3">Esta aplicación fué creada para cumplir con la tarea asignada en la 4ta semana del curso: \n<b>Desarrollo de aplicaciones con Android</b></string>
+    <string name="dialogo_boton">Cerrar</string>
     <string name="favoritos">Favoritos</string>
-    <string name="action_acerca">Acerca de...</string>
+    <string name="action_contacto">Contacto</string>
+    <string name="action_acerca">Acerca de&#8230;</string>
     <string name="action_five_puppies">Cinco Mascotas</string>
+    <string name="contacto_nombre">Nombre</string>
+    <string name="contacto_correo">Correo (Por proposito de la tarea, a la dirección ingresada acá, será enviado el correo generado en este Activity)</string>
+    <string name="contacto_comentario">Comentario</string>
+    <string name="contacto_enviar">Enviar</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -43,7 +42,7 @@ public class FiveAdapter extends RecyclerView.Adapter<FiveAdapter.PuppyViewHolde
 
     @Override
     public PuppyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.puppy_card, viewGroup, false);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_puppy, viewGroup, false);
         return new PuppyViewHolder(v);
     }
 
