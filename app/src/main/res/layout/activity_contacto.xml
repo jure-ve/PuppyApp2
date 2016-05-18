@@ -17,7 +17,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editNombre" />
+        android:id="@+id/editNombre"
+        android:inputType="text" />
     <TextView
         android:text="@string/contacto_correo"
         android:layout_width="wrap_content"
@@ -35,10 +36,17 @@
         android:lines="4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editComentario" />
+        android:id="@+id/editComentario"
+        android:inputType="text|textMultiLine" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonEnviar"
         android:text="@string/contacto_enviar"/>
+    <TextView
+        android:text="@string/contacto_nota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp"
+        android:textStyle="bold|italic" />
 </LinearLayout>

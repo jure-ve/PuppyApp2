@@ -9,10 +9,10 @@
     <string name="action_acerca">Acerca de&#8230;</string>
     <string name="action_five_puppies">Cinco Mascotas</string>
     <string name="contacto_nombre">Nombre</string>
-    <string name="contacto_correo">Correo (Por proposito de la tarea, a la dirección ingresada acá, será enviado el correo generado en este Activity)</string>
+    <string name="contacto_correo">Correo</string>
     <string name="contacto_comentario">Comentario</string>
     <string name="contacto_enviar">Enviar</string>
-
+    <string name="contacto_nota">Nota: Por proposito de la tarea, a la dirección de correo ingresada en este formulario será enviado el correo generado en este Activity.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
