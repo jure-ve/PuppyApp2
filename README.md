@@ -6,7 +6,7 @@ Esta aplicación usa Recycler View, Action View, Menú, Action Bar y Fragments:
 
 ### Fragment 1: Lista de Mascotas
 
-![Fragment Lista de Mascotas](https://raw.githubusercontent.com/jure-ve/PuppyApp2/master/a002.png)
+![Fragment Lista de Mascotas](https://raw.githubusercontent.com/jure-ve/PuppyApp2/master/a002v2.png)
 
 ### Fragment 2: Perfil de Mascota
 
