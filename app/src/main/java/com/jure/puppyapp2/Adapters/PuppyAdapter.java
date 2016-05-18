@@ -1,5 +1,6 @@
 package com.jure.puppyapp2.Adapters;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jure.puppyapp2.Activities.MainActivity;
 import com.jure.puppyapp2.Classes.Puppy;
 import com.jure.puppyapp2.R;
 
@@ -19,6 +21,7 @@ import java.util.List;
 public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHolder> {
     private List<Puppy> items;
     private ArrayList<Puppy> favoritos;
+    private Context context;
 
     public static class PuppyViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
@@ -34,11 +37,13 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
             raiting = (TextView) v.findViewById(R.id.raiting);
             imageView2 = (ImageView) v.findViewById(R.id.imageView2);
         }
+
     }
 
-    public PuppyAdapter(List<Puppy> items) {
+    public PuppyAdapter(List<Puppy> items, Context context) {
         this.items = items;
         this.favoritos =  new ArrayList<Puppy>();
+        this.context = context;
     }
 
     @Override
@@ -76,6 +81,10 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
                 if (favoritos.size() > 5) {
                     favoritos.remove(0);
                 }
+
+                MainActivity ma = (MainActivity) context;
+
+                ma.setFavoritos(favoritos);
             }
         });
 
@@ -97,6 +106,10 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
                 if (favoritos.size() > 5) {
                     favoritos.remove(0);
                 }
+
+                MainActivity ma = (MainActivity) context;
+
+                ma.setFavoritos(favoritos);
             }
 
         });

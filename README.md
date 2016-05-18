@@ -1,10 +1,16 @@
-# PuppyApp2: Mascotas, Recycler View y Action View
+# PuppyApp2: Mascotas
 
-Esta aplicación, estará divida en dos partes:
+Esta aplicación usa Recycler View, Action View, Menú, Action Bar y Fragments:
 
-## Activity Lista de Mascotas
+## Activity Lista de Mascotas y Perfil de Mascota
 
-![Activity Lista de Mascotas](https://raw.githubusercontent.com/jure-ve/PuppyApp2/master/a002.png)
+### Fragment 1: Lista de Mascotas
+
+![Fragment Lista de Mascotas](https://raw.githubusercontent.com/jure-ve/PuppyApp2/master/a002.png)
+
+### Fragment 2: Perfil de Mascota
+
+![Fragment Perfil de Mascota](https://raw.githubusercontent.com/jure-ve/PuppyApp2/master/a003.png)
 
 ## Activity Lista 5 Mascotas Favoritas
 

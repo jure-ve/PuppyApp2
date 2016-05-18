@@ -4,29 +4,33 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.support.v4.app.Fragment;
 
+import com.jure.puppyapp2.Adapters.PageAdapter;
 import com.jure.puppyapp2.Classes.Puppy;
-import com.jure.puppyapp2.Adapters.PuppyAdapter;
+import com.jure.puppyapp2.Fragments.PuppiesListFragment;
+import com.jure.puppyapp2.Fragments.PuppyPerfilFragment;
 import com.jure.puppyapp2.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private PuppyAdapter adapter;
-    private RecyclerView recycler;
-    private RecyclerView.LayoutManager lManager;
-    private List items;
 
+    ArrayList<Puppy> favoritos = new ArrayList<Puppy>();
+
+    private int[] tabIcons = {
+            R.drawable.home,
+            R.drawable.dog,
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -34,39 +38,53 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.footprint2);
-        setSupportActionBar(toolbar);
+
+        if (toolbar != null) {
+            toolbar.setNavigationIcon(R.drawable.footprint2);
+            toolbar.setTitle(R.string.app_name);
+            setSupportActionBar(toolbar);
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Hiciste Click en este botón!", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        items = new ArrayList();
+        if (fab != null) {
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getApplicationContext(), "Hiciste Click en este botón!", Toast.LENGTH_SHORT).show();
+                }
+            });
 
-        items.add(new Puppy("Russy", R.drawable.p001));
-        items.add(new Puppy("Goloso", R.drawable.p002));
-        items.add(new Puppy("Genius", R.drawable.p003));
-        items.add(new Puppy("Kike", R.drawable.p004));
-        items.add(new Puppy("Pochito", R.drawable.p005));
-        items.add(new Puppy("Galan", R.drawable.p006));
-        items.add(new Puppy("Duque", R.drawable.p007));
-        items.add(new Puppy("Donatto", R.drawable.p008));
+        }
 
-        recycler = (RecyclerView) findViewById(R.id.recycler_view);
-        recycler.setHasFixedSize(true);
+        ViewPager viewpager = (ViewPager) findViewById(R.id.viewpager);
 
-        lManager = new LinearLayoutManager(this);
-        recycler.setLayoutManager(lManager);
+        if (viewpager != null) {
 
-        adapter = new PuppyAdapter(items);
+            viewpager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
 
-        recycler.setAdapter(adapter);
+        }
+
+        TabLayout tablayout = (TabLayout) findViewById(R.id.tablayout);
+
+        if (tablayout != null) {
+
+            tablayout.setupWithViewPager(viewpager);
+            tablayout.getTabAt(0).setIcon(tabIcons[0]);
+            tablayout.getTabAt(1).setIcon(tabIcons[1]);
+
+        }
 
     }
+    private ArrayList<Fragment> agregarFragments() {
+        ArrayList<Fragment> fragments = new ArrayList<>();
+
+        fragments.add(new PuppiesListFragment());
+        fragments.add(new PuppyPerfilFragment());
+
+        return fragments;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -113,8 +131,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_five_puppies) {
 
-            ArrayList<Puppy> favoritos = adapter.getFavoritos();
-
             if (favoritos.size() == 5) {
                 Intent intent = new Intent(MainActivity.this, FiveActivity.class);
 
@@ -131,4 +147,9 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void setFavoritos(ArrayList<Puppy> favoritos) {
+        this.favoritos = favoritos;
+    }
+
 }
