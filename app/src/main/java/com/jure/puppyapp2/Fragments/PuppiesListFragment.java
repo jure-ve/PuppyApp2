@@ -9,8 +9,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jure.puppyapp2.Activities.MainActivity;
 import com.jure.puppyapp2.Adapters.PuppyAdapter;
 import com.jure.puppyapp2.Classes.Puppy;
+import com.jure.puppyapp2.Modelos.ConstructorPuppies;
 import com.jure.puppyapp2.R;
 
 import java.util.ArrayList;
@@ -36,16 +38,12 @@ public class PuppiesListFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_puppies_list, container, false);
 
-        List items = new ArrayList();
+        ConstructorPuppies constructorPuppies = new ConstructorPuppies(getActivity());
 
-        items.add(new Puppy("Russy", R.drawable.p001));
-        items.add(new Puppy("Goloso", R.drawable.p002));
-        items.add(new Puppy("Genius", R.drawable.p003));
-        items.add(new Puppy("Kike", R.drawable.p004));
-        items.add(new Puppy("Pochito", R.drawable.p005));
-        items.add(new Puppy("Galan", R.drawable.p006));
-        items.add(new Puppy("Duque", R.drawable.p007));
-        items.add(new Puppy("Donatto", R.drawable.p008));
+        List items = constructorPuppies.obtenerDatos();
+
+        MainActivity ma = (MainActivity) getActivity();
+        ma.setFavoritos(constructorPuppies.obtenerFavoritos());
 
         recycler = (RecyclerView) v.findViewById(R.id.puppieslist);
 

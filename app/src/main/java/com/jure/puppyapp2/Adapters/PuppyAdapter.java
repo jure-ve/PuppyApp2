@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.jure.puppyapp2.Activities.MainActivity;
 import com.jure.puppyapp2.Classes.Puppy;
+import com.jure.puppyapp2.Modelos.ConstructorPuppies;
 import com.jure.puppyapp2.R;
 
 import java.util.ArrayList;
@@ -41,8 +42,11 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
     }
 
     public PuppyAdapter(List<Puppy> items, Context context) {
+
+        ConstructorPuppies constructorPuppies = new ConstructorPuppies(context);
+
         this.items = items;
-        this.favoritos =  new ArrayList<Puppy>();
+        this.favoritos = constructorPuppies.obtenerFavoritos() ;
         this.context = context;
     }
 
@@ -61,12 +65,23 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
     public void onBindViewHolder(final PuppyViewHolder viewHolder, final int i) {
         viewHolder.imagen.setImageResource(items.get(i).getImagen());
         viewHolder.nombre.setText(items.get(i).getNombre());
-        viewHolder.raiting.setText(String.valueOf(items.get(i).getRaiting()));
+
+        ConstructorPuppies constructorPuppies = new ConstructorPuppies(context);
+
+        viewHolder.raiting.setText(String.valueOf(constructorPuppies.obtenerRaitingPuppy(items.get(i))));
+
 
         viewHolder.imagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int raiting = items.get(i).getRaiting() + 1;
+
+                MainActivity ma = (MainActivity) context;
+
+                ConstructorPuppies constructorPuppies = new ConstructorPuppies(ma);
+                constructorPuppies.darRaitingPuppy(items.get(i));
+
+                int raiting = constructorPuppies.obtenerRaitingPuppy(items.get(i));
+
                 items.get(i).setRaiting(raiting);
                 viewHolder.raiting.setText(String.valueOf(items.get(i).getRaiting()));
 
@@ -81,8 +96,6 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
                 if (favoritos.size() > 5) {
                     favoritos.remove(0);
                 }
-
-                MainActivity ma = (MainActivity) context;
 
                 ma.setFavoritos(favoritos);
             }
@@ -91,7 +104,14 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
         viewHolder.imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int raiting = items.get(i).getRaiting() + 1;
+
+                MainActivity ma = (MainActivity) context;
+
+                ConstructorPuppies constructorPuppies = new ConstructorPuppies(ma);
+                constructorPuppies.darRaitingPuppy(items.get(i));
+
+                int raiting = constructorPuppies.obtenerRaitingPuppy(items.get(i));
+
                 items.get(i).setRaiting(raiting);
                 viewHolder.raiting.setText(String.valueOf(items.get(i).getRaiting()));
 
@@ -106,8 +126,6 @@ public class PuppyAdapter extends RecyclerView.Adapter<PuppyAdapter.PuppyViewHol
                 if (favoritos.size() > 5) {
                     favoritos.remove(0);
                 }
-
-                MainActivity ma = (MainActivity) context;
 
                 ma.setFavoritos(favoritos);
             }
